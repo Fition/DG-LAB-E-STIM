@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BluetoothDemo</string>
+    <string name="fetching">获取中…</string>
+    <string name="deviceName">设备名称</string>
+    <string name="batteryLevel">电池电量</string>
+    <string name="powerAText">强度A</string>
+    <string name="powerBText">强度B</string>
+</resources>

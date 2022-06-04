@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GattConfig">
+
+
+    <RelativeLayout
+        android:id="@+id/battery_layout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/gattTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/batteryLevel" />
+
+        <TextView
+            android:id="@+id/batteryLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/fetching" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/deviceNameLayout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/battery_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/deviceNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deviceName" />
+
+        <TextView
+            android:id="@+id/deviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/fetching" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/powerABTextLayout"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/deviceNameLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/powerAText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/powerAText"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/powerBText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/powerBText"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/powerABLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/powerABTextLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/powerAValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/setPowerA"
+            android:layout_alignEnd="@+id/setPowerA"
+            android:inputType="number"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/powerBValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/setPowerB"
+            android:layout_alignEnd="@+id/setPowerB"
+            android:inputType="number"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+
+        <Button
+            android:id="@+id/setPowerA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/powerAValue"
+            android:text="设置A"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/setPowerB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/powerBValue"
+            android:layout_alignParentEnd="true"
+            android:text="设置B"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/gotPowerA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setPowerA"
+            android:layout_alignStart="@+id/setPowerA"
+            android:layout_alignEnd="@+id/setPowerA"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/gotPowerB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setPowerB"
+            android:layout_alignStart="@+id/setPowerB"
+            android:layout_alignEnd="@+id/setPowerB"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/waveATextLayout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/powerABLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/waveHoldA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="电电" />
+
+        <Button
+            android:id="@+id/waveHoldB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="电电" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/waveConfigALayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/waveATextLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="90dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/waveAx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="textPersonName"
+            android:text="5"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/waveAy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waveAx"
+            android:ems="3"
+            android:inputType="textPersonName"
+            android:text="135"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/waveAz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waveAy"
+            android:ems="3"
+            android:textAlignment="center"
+            android:inputType="textPersonName"
+            android:text="20" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/waveConfigBLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/waveATextLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="90dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/waveBx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="textPersonName"
+            android:text="5"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/waveBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waveBx"
+            android:ems="3"
+            android:inputType="textPersonName"
+            android:text="135"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/waveBz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waveBy"
+            android:layout_marginStart="0dp"
+            android:ems="3"
+            android:inputType="textPersonName"
+            android:text="20"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/waveConfigTextLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/waveATextLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/waveXText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="脉冲次数"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/waveYText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waveXText"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:text="间隔"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/waveZText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waveYText"
+            android:layout_margin="8dp"
+            android:text="脉冲宽度"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
